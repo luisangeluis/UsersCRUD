@@ -7,6 +7,7 @@ import useCrud from './hooks/useCrud';
 function App() {
   const [users] = useCrud();
   const [showModal, setShowModal] = useState(false);
+  const [userToUpdate, setUserToUpdate] = useState();
 
   return (
     <div className="App">
@@ -14,12 +15,21 @@ function App() {
       <main>
         <div className="container">
           <div className="row">
-            <button onClick={() => setShowModal(!showModal)}>
+            <button
+              onClick={() => setShowModal(true)}
+              className="btn btn-primary w-25"
+            >
               +Crear nuevo usuario
             </button>
           </div>
-          {showModal && <Modal setShowModal={setShowModal} />}
-          <UsersList users={users} />
+          {showModal && (
+            <Modal setShowModal={setShowModal} userToUpdate={userToUpdate} />
+          )}
+          <UsersList
+            users={users}
+            setShowModal={setShowModal}
+            setUserToUpdate={setUserToUpdate}
+          />
         </div>
       </main>
       <footer></footer>
