@@ -3,6 +3,7 @@ import React from 'react';
 const User = ({ user, setShowModal, setUserToUpdate }) => {
   const makeUserToUpdate = () => {
     const object = {
+      id: user.id,
       first_name: user.first_name,
       last_name: user.last_name,
       email: user.email,
@@ -10,7 +11,7 @@ const User = ({ user, setShowModal, setUserToUpdate }) => {
       birthday: user.birthday,
     };
 
-    console.log(object);
+    // console.log(object);
     setUserToUpdate(object);
   };
 
