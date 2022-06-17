@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import Modal from './components/Modal';
 import UsersList from './components/UsersList';
@@ -16,7 +16,9 @@ function App() {
         <div className="container">
           <div className="row">
             <button
-              onClick={() => setShowModal(true)}
+              onClick={() => {
+                setShowModal(true), setUserToUpdate();
+              }}
               className="btn btn-primary w-25"
             >
               +Crear nuevo usuario
