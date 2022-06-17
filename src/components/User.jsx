@@ -1,4 +1,5 @@
 import React from 'react';
+import deleteUser from '../helpers/deleteUser.js';
 
 const User = ({ user, setShowModal, setUserToUpdate }) => {
   const makeUserToUpdate = () => {
@@ -10,8 +11,6 @@ const User = ({ user, setShowModal, setUserToUpdate }) => {
       password: user.password,
       birthday: user.birthday,
     };
-
-    // console.log(object);
     setUserToUpdate(object);
   };
 
@@ -25,6 +24,7 @@ const User = ({ user, setShowModal, setUserToUpdate }) => {
           <div className="text">CUMPLEAÑOS {user.birthday}</div>
         </div>
         <div className="card-fotter">
+          <button onClick={() => deleteUser(user.id)}>Borrar</button>
           <button
             onClick={() => {
               setShowModal(true), makeUserToUpdate();
