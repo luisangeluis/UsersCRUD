@@ -40,7 +40,7 @@ const Modal = ({ setShowModal, userToUpdate }) => {
                 </label>
                 <input
                   type="text"
-                  value={userToUpdate && userToUpdate.first_name}
+                  defaultValue={userToUpdate && userToUpdate.first_name}
                   className="form-control"
                   {...register('first_name', { required: true })}
                 />
@@ -51,7 +51,7 @@ const Modal = ({ setShowModal, userToUpdate }) => {
                 </label>
                 <input
                   type="text"
-                  value={userToUpdate && userToUpdate.last_name}
+                  defaultValue={userToUpdate && userToUpdate.last_name}
                   className="form-control"
                   {...register('last_name', { required: true })}
                 />
@@ -62,7 +62,7 @@ const Modal = ({ setShowModal, userToUpdate }) => {
                 </label>
                 <input
                   type="text"
-                  value={userToUpdate && userToUpdate.email}
+                  defaultValue={userToUpdate && userToUpdate.email}
                   className="form-control"
                   {...register('email', { required: true })}
                 />
@@ -73,7 +73,7 @@ const Modal = ({ setShowModal, userToUpdate }) => {
                 </label>
                 <input
                   type="text"
-                  value={userToUpdate && userToUpdate.password}
+                  defaultValue={userToUpdate && userToUpdate.password}
                   className="form-control"
                   {...register('password', { required: true })}
                 />
@@ -84,7 +84,7 @@ const Modal = ({ setShowModal, userToUpdate }) => {
                 </label>
                 <input
                   type="date"
-                  value={userToUpdate && userToUpdate.birthday}
+                  defaultValue={userToUpdate && userToUpdate.birthday}
                   className="form-control"
                   {...register('birthday', { required: true })}
                 />
