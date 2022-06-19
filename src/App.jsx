@@ -5,22 +5,29 @@ import UsersList from './components/UsersList';
 import useCrud from './hooks/useCrud';
 
 function App() {
-  const [users,createUser,updateUser,deleteUser] = useCrud();
+  const [users, createUser, updateUser, deleteUser] = useCrud();
   const [showModal, setShowModal] = useState(false);
-  const [userToUpdate,setUserToUpdate] = useState();
+  const [userToUpdate, setUserToUpdate] = useState();
 
   return (
     <div className="App">
-      <header></header>
-      <main>
-        <div className="container">
-          <div className="row">
-            <button onClick={()=>{setShowModal(true), setUserToUpdate()}}>Crear nuevo usuario</button>
+      <header className='header'>
+        <div className="container mb-2 mb-md-3 rounded-2">
+          <div className="row text-center justify-content-center align-items-center">
+            <div className="col-md-6 text-md-start"><h1 className='fw-bold'>Usuarios</h1></div>
+            <div className="col-md-6 text-md-end" >
+              <button className="btn btn-create" onClick={() => { setShowModal(true), setUserToUpdate() }}>Crear nuevo usuario</button>
+            </div>
           </div>
-          {showModal && (
-            <Modal setShowModal={setShowModal} createUser={createUser} userToUpdate={userToUpdate} updateUser={updateUser}/>
-          )}
-          <UsersList users={users} setUserToUpdate={setUserToUpdate} setShowModal={setShowModal} deleteUser={deleteUser}/>
+        </div>
+      </header>
+      <main>
+        {showModal && (
+          <Modal setShowModal={setShowModal} createUser={createUser} userToUpdate={userToUpdate} updateUser={updateUser} />
+        )}
+        <div className="container">
+
+          <UsersList users={users} setUserToUpdate={setUserToUpdate} setShowModal={setShowModal} deleteUser={deleteUser} />
         </div>
       </main>
       <footer></footer>

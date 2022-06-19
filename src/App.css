@@ -3,21 +3,39 @@
   padding: 0;
   box-sizing: border-box;
 }
-.my-modal {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
+html,body,#root,.App{
   height: 100%;
+}
+/******header******/
+.header .container{
+  min-height: 4rem;
+  background-color: lightblue;
+}
+
+.header .container >.row{
+  min-height:inherit
+
+}
+/* ******Main****** */
+.btn-create{
+  color:white;
+  background-color: #5564eb;
+}
+
+/******Modal******/
+.my-modal .container{
   position: absolute;
-  top: 0;
+  min-width: 100%;
+  min-height: 100%;
+  top:0;
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 1;
-  text-align: center;
-  background-color: black;
-  opacity: 0.8;
-  color: white;
-  font-size: 3rem;
+  margin: 0;
+  z-index:1;
+  background-color: rgba(33,97,140, 0.9);
+}
+
+.my-modal .container form{
+  /* opacity: 1; */
 }

@@ -21,7 +21,7 @@ const Modal = ({ setShowModal,createUser,userToUpdate,updateUser}) => {
 
   return (
     <div className="my-modal">
-      <div className="container d-flex   flex-column">
+      <div className="container d-flex flex-column justify-content-center">
         <button
           onClick={() => setShowModal(false)}
           className="btn btn-primary align-self-end"
