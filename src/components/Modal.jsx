@@ -1,23 +1,23 @@
 import React, { useEffect } from 'react';
-import createUser from '../helpers/createUser';
 import { useForm } from 'react-hook-form';
-import updateUser from '../helpers/updateUser';
 
-const Modal = ({ setShowModal, userToUpdate }) => {
+const Modal = ({ setShowModal,createUser,userToUpdate,updateUser}) => {
   const { register, handleSubmit } = useForm();
 
-  useEffect(() => {
-    console.log(userToUpdate);
-  }, [userToUpdate]);
+  const sendInfo=(data)=>{
+    console.log(data)
 
-  const sendInfo = (data) => {
-    if (userToUpdate) {
-      let id = userToUpdate.id;
-      updateUser(id, data);
-    } else {
+    if(userToUpdate){
+      updateUser(userToUpdate.id,data);
+    }else{
+      
       createUser(data);
+
     }
-  };
+    setShowModal(false);
+  }
+
+  
 
   return (
     <div className="my-modal">
@@ -40,8 +40,8 @@ const Modal = ({ setShowModal, userToUpdate }) => {
                 </label>
                 <input
                   type="text"
-                  defaultValue={userToUpdate && userToUpdate.first_name}
                   className="form-control"
+                  defaultValue={userToUpdate?.first_name}
                   {...register('first_name', { required: true })}
                 />
               </div>
@@ -51,8 +51,8 @@ const Modal = ({ setShowModal, userToUpdate }) => {
                 </label>
                 <input
                   type="text"
-                  defaultValue={userToUpdate && userToUpdate.last_name}
                   className="form-control"
+                  defaultValue={userToUpdate?.last_name}
                   {...register('last_name', { required: true })}
                 />
               </div>
@@ -62,8 +62,9 @@ const Modal = ({ setShowModal, userToUpdate }) => {
                 </label>
                 <input
                   type="text"
-                  defaultValue={userToUpdate && userToUpdate.email}
                   className="form-control"
+                  defaultValue={userToUpdate?.email}
+
                   {...register('email', { required: true })}
                 />
               </div>
@@ -73,8 +74,8 @@ const Modal = ({ setShowModal, userToUpdate }) => {
                 </label>
                 <input
                   type="text"
-                  defaultValue={userToUpdate && userToUpdate.password}
                   className="form-control"
+                  defaultValue={userToUpdate?.password}
                   {...register('password', { required: true })}
                 />
               </div>
@@ -84,14 +85,12 @@ const Modal = ({ setShowModal, userToUpdate }) => {
                 </label>
                 <input
                   type="date"
-                  defaultValue={userToUpdate && userToUpdate.birthday}
                   className="form-control"
+                  defaultValue={userToUpdate?.birthday}
                   {...register('birthday', { required: true })}
                 />
               </div>
-              <button className="btn btn-primary">
-                {userToUpdate ? 'Actualizar usuario' : 'Crear nuevo usuario'}
-              </button>
+              <button className="btn btn-primary">Enviar</button>
             </form>
           </div>
         </div>

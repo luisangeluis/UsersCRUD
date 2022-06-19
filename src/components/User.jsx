@@ -1,19 +1,13 @@
 import React from 'react';
-import deleteUser from '../helpers/deleteUser.js';
 
-const User = ({ user, setShowModal, setUserToUpdate }) => {
-  const makeUserToUpdate = () => {
-    const object = {
-      id: user.id,
-      first_name: user.first_name,
-      last_name: user.last_name,
-      email: user.email,
-      password: user.password,
-      birthday: user.birthday,
-    };
-    setUserToUpdate(object);
-  };
+const User = ({ user,setUserToUpdate,setShowModal,deleteUser}) => {
 
+  const makeSetUserToUpdate=()=>{
+    setUserToUpdate(user)
+    setShowModal(true);
+  }
+
+  // const 
   return (
     <div className="col-md-4">
       <div className="card">
@@ -24,14 +18,8 @@ const User = ({ user, setShowModal, setUserToUpdate }) => {
           <div className="text">CUMPLEAÑOS {user.birthday}</div>
         </div>
         <div className="card-fotter">
-          <button onClick={() => deleteUser(user.id)}>Borrar</button>
-          <button
-            onClick={() => {
-              setShowModal(true), makeUserToUpdate();
-            }}
-          >
-            Editar
-          </button>
+          <button onClick={()=>deleteUser(user.id)}>Borrar</button>
+          <button onClick={makeSetUserToUpdate}>Editar</button>
         </div>
       </div>
     </div>
