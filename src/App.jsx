@@ -1,13 +1,13 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import './App.css';
 import Modal from './components/Modal';
 import UsersList from './components/UsersList';
 import useCrud from './hooks/useCrud';
 
 function App() {
-  const [users] = useCrud();
+  const [users,createUser,updateUser] = useCrud();
   const [showModal, setShowModal] = useState(false);
-  const [userToUpdate, setUserToUpdate] = useState();
+  const [userToUpdate,setUserToUpdate] = useState();
 
   return (
     <div className="App">
@@ -15,23 +15,12 @@ function App() {
       <main>
         <div className="container">
           <div className="row">
-            <button
-              onClick={() => {
-                setShowModal(true), setUserToUpdate();
-              }}
-              className="btn btn-primary w-25"
-            >
-              +Crear nuevo usuario
-            </button>
+            <button onClick={()=>{setShowModal(true), setUserToUpdate()}}>Crear nuevo usuario</button>
           </div>
           {showModal && (
-            <Modal setShowModal={setShowModal} userToUpdate={userToUpdate} />
+            <Modal setShowModal={setShowModal} createUser={createUser} userToUpdate={userToUpdate} updateUser={updateUser}/>
           )}
-          <UsersList
-            users={users}
-            setShowModal={setShowModal}
-            setUserToUpdate={setUserToUpdate}
-          />
+          <UsersList users={users} setUserToUpdate={setUserToUpdate} setShowModal={setShowModal}/>
         </div>
       </main>
       <footer></footer>
