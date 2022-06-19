@@ -46,9 +46,11 @@ const useCrud = () => {
       })
       .catch((error) => {
         console.log(error);
-      });
+      })
+      .finally(()=>readUsers());
+      
   };
 
-  return [users,createUser,updateUser];
+  return [users,createUser,updateUser,deleteUser];
 };
 export default useCrud;

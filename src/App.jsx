@@ -5,7 +5,7 @@ import UsersList from './components/UsersList';
 import useCrud from './hooks/useCrud';
 
 function App() {
-  const [users,createUser,updateUser] = useCrud();
+  const [users,createUser,updateUser,deleteUser] = useCrud();
   const [showModal, setShowModal] = useState(false);
   const [userToUpdate,setUserToUpdate] = useState();
 
@@ -20,7 +20,7 @@ function App() {
           {showModal && (
             <Modal setShowModal={setShowModal} createUser={createUser} userToUpdate={userToUpdate} updateUser={updateUser}/>
           )}
-          <UsersList users={users} setUserToUpdate={setUserToUpdate} setShowModal={setShowModal}/>
+          <UsersList users={users} setUserToUpdate={setUserToUpdate} setShowModal={setShowModal} deleteUser={deleteUser}/>
         </div>
       </main>
       <footer></footer>
