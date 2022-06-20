@@ -19,7 +19,6 @@ const User = ({
     deleteUser(user.id);
   };
 
-  // const
   return (
     <div className="col-md-6 col-lg-4 my-2 my-md-3">
       <div className="card p-2 p-md-3 rounded-2">
