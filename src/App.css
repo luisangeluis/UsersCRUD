@@ -39,7 +39,7 @@ body {
 }
 
 .user-list .card {
-  height: 18rem;
+  height: 15rem;
   justify-content: space-between;
   padding: 1rem;
   box-sizing: border-box;
