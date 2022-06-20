@@ -1,7 +1,14 @@
 import React from 'react';
 import User from './User';
 
-const UsersList = ({ users,setUserToUpdate,setShowModal,deleteUser}) => {
+const UsersList = ({
+  users,
+  setUserToUpdate,
+  setShowModal,
+  deleteUser,
+  setShowModalDelete,
+  setUserToDelete,
+}) => {
   return (
     <div className="user-list row">
       {users &&
@@ -9,9 +16,11 @@ const UsersList = ({ users,setUserToUpdate,setShowModal,deleteUser}) => {
           <User
             user={user}
             key={user.id}
-            setUserToUpdate={setUserToUpdate}  
-            setShowModal={setShowModal}  
-            deleteUser={deleteUser}        
+            setUserToUpdate={setUserToUpdate}
+            setShowModal={setShowModal}
+            deleteUser={deleteUser}
+            setShowModalDelete={setShowModalDelete}
+            setUserToDelete={setUserToDelete}
           />
         ))}
     </div>

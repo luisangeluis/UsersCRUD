@@ -3,39 +3,62 @@
   padding: 0;
   box-sizing: border-box;
 }
-html,body,#root,.App{
-  height: 100%;
+html,
+body,
+#root,
+.App {
+  min-height: 100%;
 }
+
+body {
+  position: relative;
+}
+
 /******header******/
-.header .container{
+.header .container {
   min-height: 4rem;
+  /* background-color: lightblue; */
   background-color: lightblue;
 }
-
-.header .container >.row{
-  min-height:inherit
-
+.header .container > .row {
+  min-height: inherit;
 }
+
 /* ******Main****** */
-.btn-create{
-  color:white;
+
+.user-list {
+  background-color: lightcoral;
+}
+
+.user-list .card {
+  height: 15rem;
+  justify-content: space-between;
+  padding: 1rem;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+.btn-create {
+  color: white;
   background-color: #5564eb;
 }
 
-/******Modal******/
-.my-modal .container{
+/******Modals******/
+.my-modal {
   position: absolute;
   min-width: 100%;
-  min-height: 100%;
-  top:0;
+  min-height: inherit;
+  top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+  z-index: 1;
+  background-color: rgba(33, 97, 140, 0.9);
   margin: 0;
-  z-index:1;
-  background-color: rgba(33,97,140, 0.9);
 }
-
-.my-modal .container form{
-  /* opacity: 1; */
+.my-modal .container {
+  position: sticky;
+  min-width: auto;
+  min-height: 100vh;
+  margin: 0;
+  top: 0;
 }

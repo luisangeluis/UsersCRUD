@@ -1,27 +1,23 @@
 import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 
-const Modal = ({ setShowModal,createUser,userToUpdate,updateUser}) => {
+const Modal = ({ setShowModal, createUser, userToUpdate, updateUser }) => {
   const { register, handleSubmit } = useForm();
 
-  const sendInfo=(data)=>{
-    console.log(data)
+  const sendInfo = (data) => {
+    console.log(data);
 
-    if(userToUpdate){
-      updateUser(userToUpdate.id,data);
-    }else{
-      
+    if (userToUpdate) {
+      updateUser(userToUpdate.id, data);
+    } else {
       createUser(data);
-
     }
     setShowModal(false);
-  }
-
-  
+  };
 
   return (
     <div className="my-modal">
-      <div className="container d-flex flex-column justify-content-center">
+      <div className="container d-flex flex-column justify-content-center mx-auto">
         <button
           onClick={() => setShowModal(false)}
           className="btn btn-primary align-self-end"
@@ -64,7 +60,6 @@ const Modal = ({ setShowModal,createUser,userToUpdate,updateUser}) => {
                   type="text"
                   className="form-control"
                   defaultValue={userToUpdate?.email}
-
                   {...register('email', { required: true })}
                 />
               </div>
