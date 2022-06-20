@@ -10,7 +10,7 @@ const UsersList = ({
   setUserToDelete,
 }) => {
   return (
-    <div className="user-list row">
+    <div className="user-list row my-2 my-md-3 m-1">
       {users &&
         users.map((user) => (
           <User

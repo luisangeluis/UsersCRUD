@@ -20,9 +20,9 @@ const Modal = ({ setShowModal, createUser, userToUpdate, updateUser }) => {
       <div className="container d-flex flex-column justify-content-center mx-auto">
         <button
           onClick={() => setShowModal(false)}
-          className="btn btn-primary align-self-end"
+          className="btn align-self-end my-3 btn-create"
         >
-          Cerrar
+          X Cancelar
         </button>
         <div className="card w-50 mx-auto">
           <div className="card-body">
@@ -30,7 +30,7 @@ const Modal = ({ setShowModal, createUser, userToUpdate, updateUser }) => {
               className="text-dark text-start"
               onSubmit={handleSubmit(sendInfo)}
             >
-              <div className="mb3">
+              <div className="mb-3">
                 <label htmlFor="" className="form-label">
                   Nombre
                 </label>
@@ -41,7 +41,7 @@ const Modal = ({ setShowModal, createUser, userToUpdate, updateUser }) => {
                   {...register('first_name', { required: true })}
                 />
               </div>
-              <div className="mb3">
+              <div className="mb-3">
                 <label htmlFor="" className="form-label">
                   Apellidos
                 </label>
@@ -52,7 +52,7 @@ const Modal = ({ setShowModal, createUser, userToUpdate, updateUser }) => {
                   {...register('last_name', { required: true })}
                 />
               </div>
-              <div className="mb3">
+              <div className="mb-3">
                 <label htmlFor="" className="form-label">
                   Correo
                 </label>
@@ -63,7 +63,7 @@ const Modal = ({ setShowModal, createUser, userToUpdate, updateUser }) => {
                   {...register('email', { required: true })}
                 />
               </div>
-              <div className="mb3">
+              <div className="mb-3">
                 <label htmlFor="" className="form-label">
                   Contraseña
                 </label>
@@ -74,7 +74,7 @@ const Modal = ({ setShowModal, createUser, userToUpdate, updateUser }) => {
                   {...register('password', { required: true })}
                 />
               </div>
-              <div className="mb3">
+              <div className="mb-3">
                 <label htmlFor="" className="form-label">
                   Cumpleaños
                 </label>
@@ -85,7 +85,9 @@ const Modal = ({ setShowModal, createUser, userToUpdate, updateUser }) => {
                   {...register('birthday', { required: true })}
                 />
               </div>
-              <button className="btn btn-primary">Enviar</button>
+              <button className="btn btn-create">
+                {userToUpdate ? 'Actualizar usuario' : 'Crear usuario'}
+              </button>
             </form>
           </div>
         </div>

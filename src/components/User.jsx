@@ -21,7 +21,7 @@ const User = ({
 
   // const
   return (
-    <div className="col-md-4 my-2 my-md-3">
+    <div className="col-md-6 col-lg-4 my-2 my-md-3">
       <div className="card p-2 p-md-3 rounded-2">
         <img src="" alt="" />
         <div className="card-body">

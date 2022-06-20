@@ -17,7 +17,7 @@ function App() {
         <div className="container   mb-2 mb-md-3 rounded-2  py-2 py-md-3">
           <div className="row text-center justify-content-center align-items-center">
             <div className="col-md-6 text-md-start">
-              <h1 className="fw-bold">Usuarios</h1>
+              <h1 className="fw-bold text-white">Usuarios</h1>
             </div>
             <div className="col-md-6 text-md-end">
               <button

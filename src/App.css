@@ -12,13 +12,15 @@ body,
 
 body {
   position: relative;
+  background: url('./assets/oficina.webp') no-repeat;
+  background-size: cover;
 }
 
 /******header******/
 .header .container {
   min-height: 4rem;
   /* background-color: lightblue; */
-  background-color: lightblue;
+  background-color: rgba(33, 97, 140, 0.8);
 }
 .header .container > .row {
   min-height: inherit;
@@ -27,11 +29,11 @@ body {
 /* ******Main****** */
 
 .user-list {
-  background-color: lightcoral;
+  background-color: rgba(33, 97, 140, 0.9);
 }
 
 .user-list .card {
-  height: 15rem;
+  height: 18rem;
   justify-content: space-between;
   padding: 1rem;
   box-sizing: border-box;
