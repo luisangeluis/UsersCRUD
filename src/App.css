@@ -8,18 +8,27 @@ body,
 #root,
 .App {
   min-height: 100%;
+  margin: 0;
 }
+
 .App {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
+  justify-content: space-evenly; */
 }
 main {
-  flex-grow: 1;
+  /* flex-grow: 1; */
 }
 body {
   position: relative;
   background: url('./assets/oficina.webp') no-repeat;
   background-size: cover;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  min-height: inherit;
+  margin: 0;
 }
 
 /******header******/
@@ -53,8 +62,8 @@ body {
 /******Modals******/
 .my-modal {
   position: absolute;
-  min-width: 100%;
-  min-height: inherit;
+  width: 100%;
+  height: 100%;
   top: 0;
   left: 0;
   right: 0;
