@@ -3,20 +3,44 @@ import './App.css';
 import GenericModal from './components/GenericModal';
 import Modal from './components/Modal';
 import ModalMessage from './components/ModalMessage';
+import SearchByName from './components/SearchByName';
 import UsersList from './components/UsersList';
 import useCrud from './hooks/useCrud';
 
+// Documentation api
+// https://users-crud1.herokuapp.com/swagger/
+
 function App() {
+  //Custom hook
   const [users, createUser, updateUser, deleteUser] = useCrud();
+  const [usersToShow, setUsersToShow] = useState();
   const [showModal, setShowModal] = useState(false);
   const [userToUpdate, setUserToUpdate] = useState();
   const [showModalDelete, setShowModalDelete] = useState(false);
   const [userToDelete, setUserToDelete] = useState();
   //Message for the generic GenericModal
   const [modalMessage, setModalMessage] = useState();
-  //Generic Generic GenericModal
-  // const [showGenericModal, setShowGenericModal] = useState(false);
+
+  useEffect(() => {
+    if (users) {
+      setUsersToShow(users);
+    }
+  }, [users]);
+
+  const getUsersByName = (name) => {
+    if (users) {
+      const usersFound = users.filter(
+        (user) =>
+          user.first_name.includes(name) || user.last_name.includes(name)
+      );
+      console.log(usersFound);
+
+      setUsersToShow(usersFound);
+    }
+  };
+
   return (
+    //Generic Modal
     <div className="App">
       {modalMessage && (
         <GenericModal
@@ -60,16 +84,20 @@ function App() {
           />
         )}
         <div className="container">
-          <UsersList
-            users={users}
-            setUserToUpdate={setUserToUpdate}
-            setShowModal={setShowModal}
-            deleteUser={deleteUser}
-            setShowModalDelete={setShowModalDelete}
-            setUserToDelete={setUserToDelete}
-            setModalMessage={setModalMessage}
-            // setShowGenericModal={setShowGenericModal}
-          />
+          <SearchByName getUsersByName={getUsersByName} />
+          {users && (
+            <UsersList
+              // users={users}
+              usersToShow={usersToShow}
+              setUserToUpdate={setUserToUpdate}
+              setShowModal={setShowModal}
+              deleteUser={deleteUser}
+              setShowModalDelete={setShowModalDelete}
+              setUserToDelete={setUserToDelete}
+              setModalMessage={setModalMessage}
+              // setShowGenericModal={setShowGenericModal}
+            />
+          )}
         </div>
       </main>
       {/* <footer></footer> */}

@@ -2,7 +2,8 @@ import React from 'react';
 import User from './User';
 
 const UsersList = ({
-  users,
+  // users,
+  usersToShow,
   setUserToUpdate,
   setShowModal,
   deleteUser,
@@ -12,8 +13,8 @@ const UsersList = ({
 }) => {
   return (
     <div className="user-list row my-2 my-md-3 m-1">
-      {users &&
-        users.map((user) => (
+      {usersToShow &&
+        usersToShow.map((user) => (
           <User
             user={user}
             key={user.id}
