@@ -96,6 +96,7 @@ body {
   z-index: 1;
   background-color: rgba(33, 97, 140, 0.9);
   margin: 0 auto;
+  transition: all 2s ease;
 }
 
 /******End Modals******/
