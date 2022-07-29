@@ -32,6 +32,8 @@ body {
 }
 
 /******header******/
+/******************/
+
 .header .container {
   min-height: 4rem;
   /* background-color: lightblue; */
@@ -42,6 +44,7 @@ body {
 }
 
 /* ******Main****** */
+/********************/
 
 .user-list {
   background-color: rgba(33, 97, 140, 0.9);
@@ -72,6 +75,7 @@ body {
   z-index: 1;
   background-color: rgba(33, 97, 140, 0.9);
   margin: 0;
+  animation: showModal 700ms;
 }
 .my-modal .container {
   position: sticky;
@@ -81,6 +85,19 @@ body {
   top: 0;
 }
 
+.generic-modal_container {
+  margin: auto;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #00000050;
+  /* opacity: 0.5; */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
 .generic-modal {
   display: flex;
   flex-direction: column;
@@ -94,9 +111,25 @@ body {
   right: 0;
   bottom: 0;
   z-index: 1;
-  background-color: rgba(33, 97, 140, 0.9);
+  background-color: rgba(33, 97, 140);
   margin: 0 auto;
-  transition: all 2s ease;
+
+  animation: showModal 700ms;
+}
+
+@keyframes showModal {
+  0% {
+    opacity: 0.5;
+    top: 5%;
+  }
+  50% {
+    opacity: 0.8;
+    top: 10.5%;
+  }
+  100% {
+    opacity: 1;
+    top: 10%;
+  }
 }
 
 /******End Modals******/
