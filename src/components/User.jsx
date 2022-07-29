@@ -7,6 +7,8 @@ const User = ({
   deleteUser,
   setShowModalDelete,
   setUserToDelete,
+  setModalMessage,
+  setShowGenericModal,
 }) => {
   const makeSetUserToUpdate = () => {
     setUserToUpdate(user);
@@ -14,9 +16,18 @@ const User = ({
   };
 
   const makeSetUserToDelete = () => {
-    setUserToDelete(user);
-    setShowModalDelete(true);
-    deleteUser(user.id);
+    const messageObject = {
+      message: 'Are you sure to delete user',
+      action: () => {
+        deleteUser(user.id);
+        setModalMessage(undefined);
+      },
+    };
+    // setShowGenericModal(true);
+    setModalMessage(messageObject);
+    // setUserToDelete(user);
+    // setShowModalDelete(true);
+    // deleteUser(user.id);
   };
 
   return (

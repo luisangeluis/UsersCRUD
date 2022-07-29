@@ -8,6 +8,7 @@ const UsersList = ({
   deleteUser,
   setShowModalDelete,
   setUserToDelete,
+  setModalMessage,
 }) => {
   return (
     <div className="user-list row my-2 my-md-3 m-1">
@@ -21,6 +22,7 @@ const UsersList = ({
             deleteUser={deleteUser}
             setShowModalDelete={setShowModalDelete}
             setUserToDelete={setUserToDelete}
+            setModalMessage={setModalMessage}
           />
         ))}
     </div>

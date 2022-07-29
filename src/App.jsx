@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import './App.css';
+import GenericModal from './components/GenericModal';
 import Modal from './components/Modal';
 import ModalMessage from './components/ModalMessage';
 import UsersList from './components/UsersList';
@@ -11,8 +12,19 @@ function App() {
   const [userToUpdate, setUserToUpdate] = useState();
   const [showModalDelete, setShowModalDelete] = useState(false);
   const [userToDelete, setUserToDelete] = useState();
+  //Message for the generic GenericModal
+  const [modalMessage, setModalMessage] = useState();
+  //Generic Generic GenericModal
+  // const [showGenericModal, setShowGenericModal] = useState(false);
   return (
     <div className="App">
+      {modalMessage && (
+        <GenericModal
+          modalMessage={modalMessage}
+          setModalMessage={setModalMessage}
+        />
+      )}
+
       <header className="header">
         <div className="container   mb-2 mb-md-3 rounded-2  py-2 py-md-3">
           <div className="row text-center justify-content-center align-items-center">
@@ -55,6 +67,8 @@ function App() {
             deleteUser={deleteUser}
             setShowModalDelete={setShowModalDelete}
             setUserToDelete={setUserToDelete}
+            setModalMessage={setModalMessage}
+            // setShowGenericModal={setShowGenericModal}
           />
         </div>
       </main>
