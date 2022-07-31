@@ -12,7 +12,7 @@ const UsersList = ({
   setModalMessage,
 }) => {
   return (
-    <div className="user-list row my-2 my-md-3 m-1">
+    <div className="user-list row">
       {usersToShow &&
         usersToShow.map((user) => (
           <User

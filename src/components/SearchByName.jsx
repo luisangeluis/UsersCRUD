@@ -6,12 +6,12 @@ const SearchByName = ({ getUsersByName }) => {
     getUsersByName(value);
   };
   return (
-    <section className="row">
+    <section className="form-search row">
       <div className="col-12">
         <form className="">
-          <div className="mb-3">
-            <input type="text" className="" onChange={onChange} />
-            <button className="btn btn-primary">Search</button>
+          <div className="mb-3 d-flex">
+            <input type="text" className="form-control" onChange={onChange} placeholder="Type a name"/>
+            <button className="btn btn-primary btn-sm mx-2">Search</button>
           </div>
         </form>
       </div>

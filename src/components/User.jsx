@@ -36,13 +36,13 @@ const User = ({
         <img src="" alt="" />
         <div className="card-body d-flex flex-column align-items-start justify-content-start">
           <div className="title">
-            Nombre:<b> {`${user.first_name} ${user.last_name}`}</b>
+            Name:<b> {`${user.first_name} ${user.last_name}`}</b>
           </div>
           <div className="text">
-            CORREO <b>{user.email}</b>
+            Email <b>{user.email}</b>
           </div>
           <div className="text">
-            CUMPLEAÑOS <b>{user.birthday}</b>
+            Birthday <b>{user.birthday}</b>
           </div>
         </div>
         <div className="card-fotter text-end">

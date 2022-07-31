@@ -3,53 +3,49 @@
   padding: 0;
   box-sizing: border-box;
 }
-html,
-body,
-#root,
-.App {
-  height: 100%;
-  margin: 0;
-}
 
-.App {
-  /* display: flex;
-  flex-direction: column;
-  justify-content: space-evenly; */
-}
-main {
-  /* flex-grow: 1; */
-}
 body {
-  position: relative;
-  background: url('./assets/oficina.webp') no-repeat;
+  background: linear-gradient(rgba(0,0,100,.35),rgba(0,0,100,.35)),url('./assets/eco-office.jpg');
+  background-repeat: no-repeat;
   background-size: cover;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 100%;
-  margin: 0;
+  background-attachment: fixed;
+  /* background-position: center; */
 }
 
 /******header******/
 /******************/
-
 .header .container {
   min-height: 4rem;
-  /* background-color: lightblue; */
-  background-color: rgba(33, 97, 140, 0.8);
+  background-color: rgba(33, 97, 140);
+  /* position: fixed;*/
+  z-index: 1;
+  right: 0;
+  left: 0; 
+  position: fixed;
+  margin: 0 auto;
 }
 .header .container > .row {
   min-height: inherit;
 }
-
 /* ******Main****** */
 /********************/
-
-.user-list {
-  background-color: rgba(33, 97, 140, 0.9);
+.App{
+  display: flex;
+  flex-direction: column;
 }
 
+main .container{
+  padding: 1.5rem;
+}
+.form-search{
+  margin-top: 8rem;
+}
+
+.user-list {
+  /* background-color: rgba(33, 97, 140, 0.9); */
+  /* background-color: ; */
+  
+}
 .user-list .card {
   height: 15rem;
   justify-content: space-between;
@@ -65,33 +61,37 @@ body {
 /******Modals******/
 /******************/
 .my-modal {
+  margin: auto;
   position: absolute;
   width: 100%;
-  min-height: 100%;
+  height: 100%;
+  background-color: #00000050;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   z-index: 1;
-  background-color: rgba(33, 97, 140, 0.9);
-  margin: 0;
+}
+.my-modal {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  background-color: rgba(33, 97, 140,.9);
+  margin: 0 auto;
   animation: showModal 700ms;
-}
-.my-modal .container {
-  position: sticky;
-  min-width: auto;
-  min-height: 100vh;
-  margin: 0;
-  top: 0;
-}
 
+}
 .generic-modal_container {
   margin: auto;
   position: absolute;
   width: 100%;
   height: 100%;
   background-color: #00000050;
-  /* opacity: 0.5; */
   top: 0;
   left: 0;
   right: 0;
@@ -104,6 +104,7 @@ body {
   justify-content: center;
   align-items: center;
   position: absolute;
+  position: fixed;
   width: 50%;
   height: 25%;
   top: 10%;
@@ -113,7 +114,6 @@ body {
   z-index: 1;
   background-color: rgba(33, 97, 140);
   margin: 0 auto;
-
   animation: showModal 700ms;
 }
 
@@ -134,3 +134,39 @@ body {
 
 /******End Modals******/
 /******************/
+
+@media screen and (min-width:576px) {
+
+  /* body{
+    background-color: red;
+  } */
+  .form-search form{
+    width: 75%;
+    margin:auto;
+  }
+  
+}
+
+@media screen and (min-width:768px) {
+
+  /* body{
+    background-color: red;
+  } */
+  .form-search form{
+    width: 50%;
+    margin:auto;
+  }
+  
+}
+
+@media screen and (min-width:992px) {
+
+  /* body{
+    background-color: red;
+  } */
+  .form-search form{
+    width: 35%;
+    margin:auto;
+  }
+  
+}
