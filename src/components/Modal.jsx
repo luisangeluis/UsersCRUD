@@ -17,10 +17,9 @@ const Modal = ({ setShowModal, createUser, userToUpdate, updateUser }) => {
 
   return (
     <div className="my-modal d-flex flex-column justify-content-center align-items-center">
-      
-        <button
+      <button
           onClick={() => setShowModal(false)}
-          className="btn align-self-end my-3 btn-create"
+          className="btn my-3 btn-create align-self-end"
         >
           X Cancel
         </button>

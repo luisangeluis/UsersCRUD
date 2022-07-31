@@ -9,7 +9,6 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  /* background-position: center; */
 }
 
 /******header******/
@@ -60,7 +59,7 @@ main .container{
 
 /******Modals******/
 /******************/
-.my-modal {
+/* .my-modal {
   margin: auto;
   position: absolute;
   width: 100%;
@@ -71,7 +70,7 @@ main .container{
   right: 0;
   bottom: 0;
   z-index: 1;
-}
+} */
 .my-modal {
   position: fixed;
   width: 100%;
@@ -81,10 +80,14 @@ main .container{
   right: 0;
   bottom: 0;
   z-index: 1;
-  background-color: rgba(33, 97, 140,.9);
+  /* background-color: rgba(33, 97, 140,.9); */
   margin: 0 auto;
   animation: showModal 700ms;
 
+}
+
+.my-modal .btn{
+  margin: 0 1rem;
 }
 .generic-modal_container {
   margin: auto;
@@ -115,16 +118,17 @@ main .container{
   background-color: rgba(33, 97, 140);
   margin: 0 auto;
   animation: showModal 700ms;
+  /* opacity: 0; */
 }
 
 @keyframes showModal {
   0% {
-    opacity: 0.5;
-    top: 5%;
+    opacity: 0.2;
+    top: -5%;
   }
   50% {
-    opacity: 0.8;
-    top: 10.5%;
+    /* opacity: 0.8; */
+    /* top:.5%; */
   }
   100% {
     opacity: 1;
@@ -141,7 +145,7 @@ main .container{
     background-color: red;
   } */
   .form-search form{
-    width: 75%;
+    /* width: 75%; */
     margin:auto;
   }
   
@@ -153,7 +157,7 @@ main .container{
     background-color: red;
   } */
   .form-search form{
-    width: 50%;
+    /* width: 50%; */
     margin:auto;
   }
   
@@ -165,7 +169,7 @@ main .container{
     background-color: red;
   } */
   .form-search form{
-    width: 35%;
+    /* width: 35%; */
     margin:auto;
   }
   

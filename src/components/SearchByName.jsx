@@ -7,7 +7,7 @@ const SearchByName = ({ getUsersByName }) => {
   };
   return (
     <section className="form-search row">
-      <div className="col-12">
+      <div className="col-md-6">
         <form className="">
           <div className="mb-3 d-flex">
             <input type="text" className="form-control" onChange={onChange} placeholder="Type a name"/>
