@@ -7,7 +7,7 @@ const SearchByName = ({ getUsersByName }) => {
   };
   return (
     <section className="form-search col-md-6 d-flex justify-content-center align-items-center">
-      <form className="d-flex align-items-center">
+      <form className="d-flex align-items-center justify-content-start">
         <input
           type="text"
           className="form-control"

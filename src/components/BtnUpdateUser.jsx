@@ -7,7 +7,7 @@ const BtnUpdateUser = ({ setUserToUpdate, setShowModal, user }) => {
   };
   return (
     <button
-      className="btn btn-outline-secondary p-1 rounded-2"
+      className="btn btn-light p-1 rounded-2"
       onClick={makeSetUserToUpdate}
     >
       <i className="fa-solid fa-pencil"></i>

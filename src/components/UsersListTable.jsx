@@ -11,9 +11,9 @@ const UsersListTable = ({
 }) => {
   console.log(usersToShow);
   return (
-    <section className="col-12 table-responsive">
-      <table className="table table-light table-striped text-center">
-        <thead>
+    <section className="col-12">
+      <table className="table table-responsive text-center my-2 my-md-3">
+        <thead className="table-dark">
           <tr>
             <th>First name</th>
             <th>Last name</th>
@@ -25,11 +25,11 @@ const UsersListTable = ({
         <tbody>
           {usersToShow?.map((user) => (
             <tr className="" key={user.id}>
-              <td>{user.first_name}</td>
-              <td>{user.last_name}</td>
-              <td>{user.email}</td>
-              <td>{user.birthday}</td>
-              <td>
+              <td className="">{user.first_name}</td>
+              <td className="">{user.last_name}</td>
+              <td className="">{user.email}</td>
+              <td className="">{user.birthday}</td>
+              <td className="">
                 <BtnDeleteUser
                   deleteUser={deleteUser}
                   user={user}

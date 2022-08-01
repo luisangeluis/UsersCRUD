@@ -23,6 +23,24 @@ body {
 .btn:focus {
   box-shadow: none;
 }
+input:focus {
+  box-shadow: none;
+  text-shadow: none;
+  outline: none;
+  border: none;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  margin-top: 8rem;
+}
+main .container {
+  padding: 1.5rem;
+}
 
 /******header******/
 /******************/
@@ -46,17 +64,7 @@ body {
 }
 /* ******Main****** */
 /********************/
-.App {
-  display: flex;
-  flex-direction: column;
-}
 
-main {
-  margin-top: 8rem;
-}
-main .container {
-  padding: 1.5rem;
-}
 .form-search .form-control {
   /* margin-top: 8rem; */
   display: initial;
@@ -72,6 +80,28 @@ main .container {
   color: #212529;
 }
 
+.switch-users {
+  background-color: #ffffff75;
+  width: 75%;
+}
+.switch-users input[type='radio'] {
+  transition: all 500ms;
+  background-color: #48589e;
+  border-radius: 1px;
+}
+
+.switch-users input[type='radio']:hover {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+  outline: none;
+}
+
+input[type='radio']:checked + label {
+  font-weight: bolder;
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
 .user-list {
   /* background-color: rgba(33, 97, 140, 0.9); */
   /* background-color: ; */
@@ -84,6 +114,20 @@ main .container {
   overflow-y: auto;
 }
 
+.table {
+  background-color: #ffffff99;
+  /* color: #ffffff; */
+  font-weight: bold;
+}
+.table tr:nth-child() {
+  background: red;
+  /* min-height: 25vh; */
+  /* border-radius: 10px; */
+}
+.table button {
+  /* display: flex; */
+  font-size: 0.7rem;
+}
 /******Modals******/
 /******************/
 .my-modal {
@@ -169,6 +213,10 @@ main .container {
     /* width: 75%; */
     margin: auto;
   }
+
+  .switch-users {
+    width: 50%;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -188,5 +236,8 @@ main .container {
   .form-search form {
     /* width: 35%; */
     margin: auto;
+  }
+  .switch-users {
+    width: 25%;
   }
 }

@@ -9,9 +9,9 @@ const SwitchView = ({ setView, view }) => {
   };
 
   return (
-    <div className="switch-users col-md-6 bg-light rounded d-flex justify-content-center align-items-center">
+    <div className="switch-users col-md-6 rounded d-flex justify-content-center align-items-center mx-auto my-2 my-md-3">
       {views.map((v) => (
-        <>
+        <section className="form-check mx-1 mx-md-2">
           <input
             className="form-check-input"
             type="radio"
@@ -22,9 +22,9 @@ const SwitchView = ({ setView, view }) => {
             checked={v === view}
           />
           <label className="form-check-label" htmlFor={v}>
-            {v}
+            {v.toLocaleUpperCase()}
           </label>
-        </>
+        </section>
       ))}
     </div>
   );
