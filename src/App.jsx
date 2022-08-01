@@ -84,7 +84,9 @@ function App() {
           />
         )}
         <div className="container">
-          <SearchByName getUsersByName={getUsersByName} />
+          <div className="row">
+            <SearchByName getUsersByName={getUsersByName} />
+          </div>
           {users && (
             <UsersList
               usersToShow={usersToShow}

@@ -11,14 +11,11 @@ const UsersList = ({
   setUserToDelete,
   setModalMessage,
 }) => {
+  const [showAsTable, setShowAsTable] = useState(false);
 
-  const [showAsTable,setShowAsTable] =useState(true);
-  
   return (
     <div className="user-list row">
-      {
-        usersToShow && !showAsTable
-        ?
+      {usersToShow && !showAsTable ? (
         usersToShow.map((user) => (
           <User
             user={user}
@@ -31,9 +28,16 @@ const UsersList = ({
             setModalMessage={setModalMessage}
           />
         ))
-        :<UsersListTable usersToShow={usersToShow}/>
-      }
-      
+      ) : (
+        <UsersListTable
+          usersToShow={usersToShow}
+          deleteUser={deleteUser}
+          // user={user}
+          setModalMessage={setModalMessage}
+          setUserToUpdate={setUserToUpdate}
+          setShowModal={setShowModal}
+        />
+      )}
     </div>
   );
 };

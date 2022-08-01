@@ -1,11 +1,18 @@
 import React from 'react';
+import BtnDeleteUser from './BtnDeleteUser';
+import BtnUpdateUser from './BtnUpdateUser';
 
-const UsersListTable = ({ usersToShow }) => {
-
+const UsersListTable = ({
+  usersToShow,
+  deleteUser,
+  setModalMessage,
+  setUserToUpdate,
+  setShowModal,
+}) => {
   console.log(usersToShow);
   return (
-    <section className='col-12 table-responsive'>
-      <table className='table table-light table-striped text-center'>
+    <section className="col-12 table-responsive">
+      <table className="table table-light table-striped text-center">
         <thead>
           <tr>
             <th>First name</th>
@@ -16,31 +23,30 @@ const UsersListTable = ({ usersToShow }) => {
           </tr>
         </thead>
         <tbody>
-          {
-            usersToShow?.map(user => (
-              <tr className="">
-                <td>{user.first_name}</td>
-                <td>{user.last_name}</td>
-                <td>{user.email}</td>
-                <td>{user.birthday}</td>
-                <td>
-                  <button className="btn btn-danger mx-1">
-                    <i className="fa-solid fa-trash-can"></i>
-                  </button>
-                  <button className="btn btn-primary mx-1">
-                    <i className="fa-solid fa-pencil"></i>
-                  </button>
-                </td>
-              </tr>
-            ))
-          }
+          {usersToShow?.map((user) => (
+            <tr className="" key={user.id}>
+              <td>{user.first_name}</td>
+              <td>{user.last_name}</td>
+              <td>{user.email}</td>
+              <td>{user.birthday}</td>
+              <td>
+                <BtnDeleteUser
+                  deleteUser={deleteUser}
+                  user={user}
+                  setModalMessage={setModalMessage}
+                />
+                <BtnUpdateUser
+                  setUserToUpdate={setUserToUpdate}
+                  setShowModal={setShowModal}
+                  user={user}
+                />
+              </td>
+            </tr>
+          ))}
         </tbody>
-
-        <tr></tr>
       </table>
     </section>
-  )
-
-}
+  );
+};
 
 export default UsersListTable;
