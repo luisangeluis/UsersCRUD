@@ -6,9 +6,21 @@
 
 body {
   background: linear-gradient(rgba(0,0,100,.35),rgba(0,0,100,.35)),url('./assets/eco-office.jpg');
+  background: linear-gradient(#00000099,#00000099),url('./assets/eco-office.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+}
+
+.btn:hover{
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
+  opacity: .9;
+}
+
+.btn:focus{
+  box-shadow: none;
+
 }
 
 /******header******/
@@ -16,6 +28,7 @@ body {
 .header .container {
   min-height: 4rem;
   background-color: rgba(33, 97, 140);
+  background-color: #1b254a;
   /* position: fixed;*/
   z-index: 1;
   right: 0;
@@ -25,6 +38,10 @@ body {
 }
 .header .container > .row {
   min-height: inherit;
+}
+.btn-create {
+  background-color: #48589e;
+  color: white;
 }
 /* ******Main****** */
 /********************/
@@ -40,6 +57,16 @@ main .container{
   margin-top: 8rem;
 }
 
+.form-search .btn{
+  background-color: #000000;
+  background-color: #48589e;
+  color: white;
+}
+
+.form-search .btn:hover{
+  color: #212529;
+}
+
 .user-list {
   /* background-color: rgba(33, 97, 140, 0.9); */
   /* background-color: ; */
@@ -52,61 +79,54 @@ main .container{
   box-sizing: border-box;
   overflow-y: auto;
 }
-.btn-create {
-  color: white;
-  background-color: #5564eb;
-}
+
 
 /******Modals******/
 /******************/
-/* .my-modal {
+.my-modal{
   margin: auto;
-  position: absolute;
+  position: fixed;
   width: 100%;
-  height: 100%;
-  background-color: #00000050;
+  min-height: 100vh;
+  background-color: #1b254a99;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 1;
-} */
-.my-modal {
+  z-index: 2;
+}
+.my-modal .container{
   position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0%;
+  margin: 0 auto;
+  top: 10%;
   left: 0;
   right: 0;
   bottom: 0;
   z-index: 1;
-  /* background-color: rgba(33, 97, 140,.9); */
-  margin: 0 auto;
   animation: showModal 700ms;
 
 }
 
-.my-modal .btn{
+.my-modal_container .btn{
   margin: 0 1rem;
 }
 .generic-modal_container {
   margin: auto;
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100%;
-  background-color: #00000050;
+  background-color: #1b254a99;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 1;
+  z-index: 2;
 }
 .generic-modal {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: absolute;
   position: fixed;
   width: 50%;
   height: 25%;
@@ -115,7 +135,7 @@ main .container{
   right: 0;
   bottom: 0;
   z-index: 1;
-  background-color: rgba(33, 97, 140);
+  background-color: #fff;
   margin: 0 auto;
   animation: showModal 700ms;
   /* opacity: 0; */

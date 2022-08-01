@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import User from './User';
+import UsersListTable from './UsersListTable';
 
 const UsersList = ({
-  // users,
   usersToShow,
   setUserToUpdate,
   setShowModal,
@@ -11,9 +11,14 @@ const UsersList = ({
   setUserToDelete,
   setModalMessage,
 }) => {
+
+  const [showAsTable,setShowAsTable] =useState(true);
+  
   return (
     <div className="user-list row">
-      {usersToShow &&
+      {
+        usersToShow && !showAsTable
+        ?
         usersToShow.map((user) => (
           <User
             user={user}
@@ -25,7 +30,10 @@ const UsersList = ({
             setUserToDelete={setUserToDelete}
             setModalMessage={setModalMessage}
           />
-        ))}
+        ))
+        :<UsersListTable usersToShow={usersToShow}/>
+      }
+      
     </div>
   );
 };

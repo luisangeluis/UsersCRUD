@@ -51,7 +51,7 @@ function App() {
 
       <header className="header">
         <div className="container mb-2 mb-md-3 rounded-2  py-2 py-md-3">
-          <div className="row text-center justify-content-center align-items-center">
+          <div className="row text-center justify-content-start align-items-center">
             <div className="col-md-6 text-md-start">
               <h1 className="fw-bold text-white">Users</h1>
             </div>
@@ -87,7 +87,6 @@ function App() {
           <SearchByName getUsersByName={getUsersByName} />
           {users && (
             <UsersList
-              // users={users}
               usersToShow={usersToShow}
               setUserToUpdate={setUserToUpdate}
               setShowModal={setShowModal}
@@ -95,7 +94,6 @@ function App() {
               setShowModalDelete={setShowModalDelete}
               setUserToDelete={setUserToDelete}
               setModalMessage={setModalMessage}
-              // setShowGenericModal={setShowGenericModal}
             />
           )}
         </div>

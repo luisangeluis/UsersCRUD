@@ -16,8 +16,9 @@ const Modal = ({ setShowModal, createUser, userToUpdate, updateUser }) => {
   };
 
   return (
-    <div className="my-modal d-flex flex-column justify-content-center align-items-center">
-      <button
+    <div className="my-modal">
+      <div className="container d-flex flex-column justify-content-center align-items-center">
+        <button
           onClick={() => setShowModal(false)}
           className="btn my-3 btn-create align-self-end"
         >
@@ -90,7 +91,9 @@ const Modal = ({ setShowModal, createUser, userToUpdate, updateUser }) => {
             </form>
           </div>
         </div>
-      
+      </div>
+
+
     </div>
   );
 };

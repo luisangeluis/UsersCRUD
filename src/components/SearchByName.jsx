@@ -11,7 +11,7 @@ const SearchByName = ({ getUsersByName }) => {
         <form className="">
           <div className="mb-3 d-flex">
             <input type="text" className="form-control" onChange={onChange} placeholder="Type a name"/>
-            <button className="btn btn-primary btn-sm mx-2">Search</button>
+            <button className="btn btn-sm mx-2">Search</button>
           </div>
         </form>
       </div>
