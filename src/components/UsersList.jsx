@@ -10,12 +10,11 @@ const UsersList = ({
   setShowModalDelete,
   setUserToDelete,
   setModalMessage,
+  view,
 }) => {
-  const [showAsTable, setShowAsTable] = useState(false);
-
   return (
     <div className="user-list row">
-      {usersToShow && !showAsTable ? (
+      {usersToShow && view !== 'list' ? (
         usersToShow.map((user) => (
           <User
             user={user}
@@ -32,7 +31,6 @@ const UsersList = ({
         <UsersListTable
           usersToShow={usersToShow}
           deleteUser={deleteUser}
-          // user={user}
           setModalMessage={setModalMessage}
           setUserToUpdate={setUserToUpdate}
           setShowModal={setShowModal}

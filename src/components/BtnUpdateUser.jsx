@@ -6,7 +6,10 @@ const BtnUpdateUser = ({ setUserToUpdate, setShowModal, user }) => {
     setShowModal(true);
   };
   return (
-    <button className="btn btn-primary mx-1" onClick={makeSetUserToUpdate}>
+    <button
+      className="btn btn-outline-secondary p-1 rounded-2"
+      onClick={makeSetUserToUpdate}
+    >
       <i className="fa-solid fa-pencil"></i>
     </button>
   );

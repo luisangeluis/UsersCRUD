@@ -5,22 +5,23 @@
 }
 
 body {
-  background: linear-gradient(rgba(0,0,100,.35),rgba(0,0,100,.35)),url('./assets/eco-office.jpg');
-  background: linear-gradient(#00000099,#00000099),url('./assets/eco-office.jpg');
+  background: linear-gradient(rgba(0, 0, 100, 0.35), rgba(0, 0, 100, 0.35)),
+    url('./assets/eco-office.jpg');
+  background: linear-gradient(#00000099, #00000099),
+    url('./assets/eco-office.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
 }
 
-.btn:hover{
+.btn:hover {
   -webkit-transform: scale(1.05);
   transform: scale(1.05);
-  opacity: .9;
+  opacity: 0.9;
 }
 
-.btn:focus{
+.btn:focus {
   box-shadow: none;
-
 }
 
 /******header******/
@@ -32,7 +33,7 @@ body {
   /* position: fixed;*/
   z-index: 1;
   right: 0;
-  left: 0; 
+  left: 0;
   position: fixed;
   margin: 0 auto;
 }
@@ -45,32 +46,35 @@ body {
 }
 /* ******Main****** */
 /********************/
-.App{
+.App {
   display: flex;
   flex-direction: column;
 }
 
-main .container{
-  padding: 1.5rem;
-}
-.form-search{
+main {
   margin-top: 8rem;
 }
+main .container {
+  padding: 1.5rem;
+}
+.form-search .form-control {
+  /* margin-top: 8rem; */
+  display: initial;
+  /* width: 50%; */
+}
 
-.form-search .btn{
-  background-color: #000000;
+.form-search .btn {
   background-color: #48589e;
   color: white;
 }
 
-.form-search .btn:hover{
+.form-search .btn:hover {
   color: #212529;
 }
 
 .user-list {
   /* background-color: rgba(33, 97, 140, 0.9); */
   /* background-color: ; */
-  
 }
 .user-list .card {
   height: 15rem;
@@ -80,10 +84,9 @@ main .container{
   overflow-y: auto;
 }
 
-
 /******Modals******/
 /******************/
-.my-modal{
+.my-modal {
   margin: auto;
   position: fixed;
   width: 100%;
@@ -95,7 +98,7 @@ main .container{
   bottom: 0;
   z-index: 2;
 }
-.my-modal .container{
+.my-modal .container {
   position: fixed;
   margin: 0 auto;
   top: 10%;
@@ -104,10 +107,9 @@ main .container{
   bottom: 0;
   z-index: 1;
   animation: showModal 700ms;
-
 }
 
-.my-modal_container .btn{
+.my-modal_container .btn {
   margin: 0 1rem;
 }
 .generic-modal_container {
@@ -159,38 +161,32 @@ main .container{
 /******End Modals******/
 /******************/
 
-@media screen and (min-width:576px) {
-
+@media screen and (min-width: 576px) {
   /* body{
     background-color: red;
   } */
-  .form-search form{
+  .form-search form {
     /* width: 75%; */
-    margin:auto;
+    margin: auto;
   }
-  
 }
 
-@media screen and (min-width:768px) {
-
+@media screen and (min-width: 768px) {
   /* body{
     background-color: red;
   } */
-  .form-search form{
+  .form-search form {
     /* width: 50%; */
-    margin:auto;
+    margin: auto;
   }
-  
 }
 
-@media screen and (min-width:992px) {
-
+@media screen and (min-width: 992px) {
   /* body{
     background-color: red;
   } */
-  .form-search form{
+  .form-search form {
     /* width: 35%; */
-    margin:auto;
+    margin: auto;
   }
-  
 }

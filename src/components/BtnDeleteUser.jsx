@@ -14,7 +14,7 @@ const BtnDeleteUser = ({ deleteUser, user, setModalMessage }) => {
   return (
     <button
       onClick={makeSetUserToDelete}
-      className="rounded-2 p-1 btn btn-outline-secondary"
+      className="rounded-2 p-1 btn btn-danger mx-2"
     >
       <i className="fa-solid fa-trash-can"></i>
     </button>

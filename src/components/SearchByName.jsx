@@ -6,20 +6,16 @@ const SearchByName = ({ getUsersByName }) => {
     getUsersByName(value);
   };
   return (
-    <section className="form-search">
-      <div className="col-md-6">
-        <form className="">
-          <div className="mb-3 d-flex">
-            <input
-              type="text"
-              className="form-control"
-              onChange={onChange}
-              placeholder="Type a name"
-            />
-            <button className="btn btn-sm mx-2">Search</button>
-          </div>
-        </form>
-      </div>
+    <section className="form-search col-md-6 d-flex justify-content-center align-items-center">
+      <form className="d-flex align-items-center">
+        <input
+          type="text"
+          className="form-control"
+          onChange={onChange}
+          placeholder="Type a name"
+        />
+        <button className="btn mx-2">Search</button>
+      </form>
     </section>
   );
 };

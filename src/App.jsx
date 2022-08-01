@@ -4,6 +4,7 @@ import GenericModal from './components/GenericModal';
 import Modal from './components/Modal';
 import ModalMessage from './components/ModalMessage';
 import SearchByName from './components/SearchByName';
+import SwitchView from './components/SwitchView';
 import UsersList from './components/UsersList';
 import useCrud from './hooks/useCrud';
 
@@ -20,6 +21,8 @@ function App() {
   const [userToDelete, setUserToDelete] = useState();
   //Message for the generic GenericModal
   const [modalMessage, setModalMessage] = useState();
+  //Change view
+  const [view, setView] = useState('detail');
 
   useEffect(() => {
     if (users) {
@@ -86,6 +89,7 @@ function App() {
         <div className="container">
           <div className="row">
             <SearchByName getUsersByName={getUsersByName} />
+            <SwitchView setView={setView} view={view} />
           </div>
           {users && (
             <UsersList
@@ -96,6 +100,7 @@ function App() {
               setShowModalDelete={setShowModalDelete}
               setUserToDelete={setUserToDelete}
               setModalMessage={setModalMessage}
+              view={view}
             />
           )}
         </div>
