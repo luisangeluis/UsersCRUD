@@ -31,10 +31,16 @@ function App() {
   }, [users]);
 
   const getUsersByName = (name) => {
+    let nameValue=name.trim();
     if (users) {
       const usersFound = users.filter(
-        (user) =>
-          user.first_name.includes(name) || user.last_name.includes(name)
+        (user) =>{
+          let completedName = `${user.first_name} ${user.last_name}`;
+          console.log(completedName);
+
+          // return user.first_name.includes(name) || user.last_name.includes(name)
+          return completedName.includes(nameValue.toLowerCase());
+        }
       );
       console.log(usersFound);
 
@@ -87,7 +93,7 @@ function App() {
           />
         )}
         <div className="container">
-          <div className="row">
+          <div className="row filters">
             <SearchByName getUsersByName={getUsersByName} />
             <SwitchView setView={setView} view={view} />
           </div>
