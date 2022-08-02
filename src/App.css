@@ -98,10 +98,12 @@ main .container {
   color: #212529;
 }
 
-.switch-users {
+.switch-users input {
   /* background-color: #ffffff75; */
   /* width: 75%; */
+  cursor: pointer;
 }
+
 .switch-users input[type='radio']+label {
   color: #ffffff;
   transition: all 500ms;
