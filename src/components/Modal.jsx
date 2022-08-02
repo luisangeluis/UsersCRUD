@@ -17,12 +17,12 @@ const Modal = ({ setShowModal, createUser, userToUpdate, updateUser }) => {
 
   return (
     <div className="my-modal">
-      <div className="container d-flex flex-column justify-content-center mx-auto">
+      <div className="container d-flex flex-column justify-content-center align-items-center">
         <button
           onClick={() => setShowModal(false)}
-          className="btn align-self-end my-3 btn-create"
+          className="btn my-3 btn-create align-self-end"
         >
-          X Cancelar
+          X Cancel
         </button>
         <div className="card w-50 mx-auto">
           <div className="card-body">
@@ -86,12 +86,14 @@ const Modal = ({ setShowModal, createUser, userToUpdate, updateUser }) => {
                 />
               </div>
               <button className="btn btn-create">
-                {userToUpdate ? 'Actualizar usuario' : 'Crear usuario'}
+                {userToUpdate ? 'Update user' : 'Create user'}
               </button>
             </form>
           </div>
         </div>
       </div>
+
+
     </div>
   );
 };

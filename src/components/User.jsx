@@ -7,6 +7,8 @@ const User = ({
   deleteUser,
   setShowModalDelete,
   setUserToDelete,
+  setModalMessage,
+  setShowGenericModal,
 }) => {
   const makeSetUserToUpdate = () => {
     setUserToUpdate(user);
@@ -14,9 +16,18 @@ const User = ({
   };
 
   const makeSetUserToDelete = () => {
-    setUserToDelete(user);
-    setShowModalDelete(true);
-    deleteUser(user.id);
+    const messageObject = {
+      message: 'Are you sure to delete user',
+      action: () => {
+        deleteUser(user.id);
+        setModalMessage(undefined);
+      },
+    };
+    // setShowGenericModal(true);
+    setModalMessage(messageObject);
+    // setUserToDelete(user);
+    // setShowModalDelete(true);
+    // deleteUser(user.id);
   };
 
   return (
@@ -25,13 +36,13 @@ const User = ({
         <img src="" alt="" />
         <div className="card-body d-flex flex-column align-items-start justify-content-start">
           <div className="title">
-            Nombre:<b> {`${user.first_name} ${user.last_name}`}</b>
+            Name:<b> {`${user.first_name} ${user.last_name}`}</b>
           </div>
           <div className="text">
-            CORREO <b>{user.email}</b>
+            Email <b>{user.email}</b>
           </div>
           <div className="text">
-            CUMPLEAÑOS <b>{user.birthday}</b>
+            Birthday <b>{user.birthday}</b>
           </div>
         </div>
         <div className="card-fotter text-end">
