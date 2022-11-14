@@ -2,7 +2,11 @@ import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 
 const Modal = ({ setShowModal, createUser, userToUpdate, updateUser }) => {
-  const { register, handleSubmit } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
   const sendInfo = (data) => {
     console.log(data);
@@ -38,8 +42,15 @@ const Modal = ({ setShowModal, createUser, userToUpdate, updateUser }) => {
                   type="text"
                   className="form-control"
                   defaultValue={userToUpdate?.first_name}
-                  {...register('first_name', { required: true })}
+                  {...register('first_name', {
+                    required: 'error message',
+                  })}
                 />
+                {errors.first_name && (
+                  <p className="position-absolute">
+                    {errors.first_name.message}
+                  </p>
+                )}
               </div>
               <div className="mb-3">
                 <label htmlFor="" className="form-label">
@@ -92,8 +103,6 @@ const Modal = ({ setShowModal, createUser, userToUpdate, updateUser }) => {
           </div>
         </div>
       </div>
-
-
     </div>
   );
 };
