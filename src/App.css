@@ -32,9 +32,7 @@ input:focus {
 form .alert {
   right: 0;
 }
-.alert-warning {
-  /* background-color: #664d0399; */
-}
+
 .App {
   display: flex;
   flex-direction: column;
@@ -205,10 +203,6 @@ input[type='radio']:checked + label {
   0% {
     opacity: 0.2;
     top: -5%;
-  }
-  50% {
-    /* opacity: 0.8; */
-    /* top:.5%; */
   }
   100% {
     opacity: 1;

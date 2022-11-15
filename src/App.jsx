@@ -31,17 +31,15 @@ function App() {
   }, [users]);
 
   const getUsersByName = (name) => {
-    let nameValue=name.trim();
+    let nameValue = name.trim();
     if (users) {
-      const usersFound = users.filter(
-        (user) =>{
-          let completedName = `${user.first_name} ${user.last_name}`;
-          console.log(completedName);
+      const usersFound = users.filter((user) => {
+        let completedName = `${user.first_name} ${user.last_name}`;
+        console.log(completedName);
 
-          // return user.first_name.includes(name) || user.last_name.includes(name)
-          return completedName.includes(nameValue.toLowerCase());
-        }
-      );
+        // return user.first_name.includes(name) || user.last_name.includes(name)
+        return completedName.includes(nameValue.toLowerCase());
+      });
       console.log(usersFound);
 
       setUsersToShow(usersFound);
@@ -86,12 +84,12 @@ function App() {
             updateUser={updateUser}
           />
         )}
-        {showModalDelete && (
+        {/* {showModalDelete && (
           <ModalMessage
             setShowModalDelete={setShowModalDelete}
             userToDelete={userToDelete}
           />
-        )}
+        )} */}
         <div className="container">
           <div className="row filters">
             <SearchByName getUsersByName={getUsersByName} />
