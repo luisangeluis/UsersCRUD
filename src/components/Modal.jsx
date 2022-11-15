@@ -1,12 +1,26 @@
 import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from 'yup';
 
 const Modal = ({ setShowModal, createUser, userToUpdate, updateUser }) => {
-  const { register, handleSubmit } = useForm();
+  const schema = yup.object().shape({
+    first_name: yup.string().required('Name is required'),
+    last_name: yup.string().required('Last name is required'),
+    email: yup.string().required('Email is required').email('Email is invalid'),
+    password: yup.string().required('Password is required'),
+    birthday: yup.string().required('Birthday is required'),
+  });
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({ resolver: yupResolver(schema) });
 
   const sendInfo = (data) => {
     console.log(data);
-
+    
     if (userToUpdate) {
       updateUser(userToUpdate.id, data);
     } else {
@@ -30,60 +44,85 @@ const Modal = ({ setShowModal, createUser, userToUpdate, updateUser }) => {
               className="text-dark text-start"
               onSubmit={handleSubmit(sendInfo)}
             >
-              <div className="mb-3">
+              <div className="mb-3 position-relative">
                 <label htmlFor="" className="form-label">
-                  Nombre
+                  Name
                 </label>
                 <input
                   type="text"
                   className="form-control"
                   defaultValue={userToUpdate?.first_name}
-                  {...register('first_name', { required: true })}
+                  {...register('first_name')}
                 />
+                {errors.first_name && (
+                  <p className="alert alert-warning m-0 p-1 d-inline position-absolute">
+                    {errors.first_name?.message}
+                  </p>
+                )}
               </div>
-              <div className="mb-3">
+              <div className="mb-3 position-relative">
                 <label htmlFor="" className="form-label">
-                  Apellidos
+                  Last name
                 </label>
                 <input
                   type="text"
                   className="form-control"
                   defaultValue={userToUpdate?.last_name}
-                  {...register('last_name', { required: true })}
+                  {...register('last_name')}
                 />
+                {errors.last_name && (
+                  <p className="alert alert-warning m-0 p-1 d-inline position-absolute">
+                    {errors.last_name?.message}
+                  </p>
+                )}
               </div>
-              <div className="mb-3">
+              <div className="mb-3 position-relative">
                 <label htmlFor="" className="form-label">
-                  Correo
+                  Email
                 </label>
                 <input
-                  type="text"
+                  type="email"
                   className="form-control"
                   defaultValue={userToUpdate?.email}
-                  {...register('email', { required: true })}
+                  {...register('email')}
                 />
+                {errors.email && (
+                  <p className="alert alert-warning m-0 p-1 d-inline position-absolute">
+                    {errors.email?.message}
+                  </p>
+                )}
               </div>
-              <div className="mb-3">
+              <div className="mb-3 position-relative">
                 <label htmlFor="" className="form-label">
-                  Contraseña
+                  Password
                 </label>
                 <input
                   type="text"
                   className="form-control"
                   defaultValue={userToUpdate?.password}
-                  {...register('password', { required: true })}
+                  {...register('password')}
                 />
+                {errors.password && (
+                  <p className="alert alert-warning m-0 p-1 d-inline position-absolute">
+                    {errors.password?.message}
+                  </p>
+                )}
               </div>
-              <div className="mb-3">
+              <div className="mb-3 position-relative">
                 <label htmlFor="" className="form-label">
-                  Cumpleaños
+                  Birthday
                 </label>
                 <input
                   type="date"
                   className="form-control"
                   defaultValue={userToUpdate?.birthday}
-                  {...register('birthday', { required: true })}
+                  {...register('birthday')}
                 />
+                {errors.birthday && (
+                  <p className="alert alert-warning m-0 p-1 d-inline position-absolute">
+                    {errors.birthday?.message}
+                  </p>
+                )}
               </div>
               <button className="btn btn-create">
                 {userToUpdate ? 'Update user' : 'Create user'}
@@ -92,8 +131,6 @@ const Modal = ({ setShowModal, createUser, userToUpdate, updateUser }) => {
           </div>
         </div>
       </div>
-
-
     </div>
   );
 };
