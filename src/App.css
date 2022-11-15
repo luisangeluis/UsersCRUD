@@ -29,7 +29,12 @@ input:focus {
   outline: none;
   border: none;
 }
-
+form .alert {
+  right: 0;
+}
+.alert-warning {
+  /* background-color: #664d0399; */
+}
 .App {
   display: flex;
   flex-direction: column;
@@ -46,9 +51,7 @@ main .container {
 /******************/
 .header .container {
   min-height: 4rem;
-  background-color: rgba(33, 97, 140);
   background-color: #1b254a;
-  /* position: fixed;*/
   z-index: 1;
   right: 0;
   left: 0;
@@ -64,22 +67,22 @@ main .container {
 }
 /* ******Main****** */
 /********************/
-.filters{
+.filters {
   border-radius: 5px;
   background-color: #212529;
 }
-.form-search form{
+.form-search form {
   width: 100%;
 }
-.form-search label{
+.form-search label {
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0;
-  padding: .5rem;
+  padding: 0.5rem;
 
   background-color: #1b254a;
-  color:#000000
+  color: #000000;
 }
 
 .form-search .form-control {
@@ -99,16 +102,12 @@ main .container {
 }
 
 .switch-users input {
-  /* background-color: #ffffff75; */
-  /* width: 75%; */
   cursor: pointer;
 }
 
-.switch-users input[type='radio']+label {
+.switch-users input[type='radio'] + label {
   color: #ffffff;
   transition: all 500ms;
-  /* background-color: #48589e; */
-  /* border-radius: 1px; */
 }
 
 .switch-users input[type='radio']:hover {
@@ -118,17 +117,13 @@ main .container {
 }
 
 input[type='radio']:checked + label {
-  color:#000000;
-  
+  color: #000000;
+
   font-weight: bolder;
   -webkit-transform: scale(1.05);
   transform: scale(1.05);
 }
 
-.user-list {
-  /* background-color: rgba(33, 97, 140, 0.9); */
-  /* background-color: ; */
-}
 .user-list .card {
   height: 15rem;
   justify-content: space-between;
@@ -139,16 +134,12 @@ input[type='radio']:checked + label {
 
 .table {
   background-color: #ffffff99;
-  /* color: #ffffff; */
   font-weight: bold;
 }
 .table tr:nth-child() {
   background: red;
-  /* min-height: 25vh; */
-  /* border-radius: 10px; */
 }
 .table button {
-  /* display: flex; */
   font-size: 0.7rem;
 }
 /******Modals******/

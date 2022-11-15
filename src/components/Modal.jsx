@@ -34,67 +34,93 @@ const Modal = ({ setShowModal, createUser, userToUpdate, updateUser }) => {
               className="text-dark text-start"
               onSubmit={handleSubmit(sendInfo)}
             >
-              <div className="mb-3">
+              <div className="mb-3 position-relative">
                 <label htmlFor="" className="form-label">
-                  Nombre
+                  Name
                 </label>
                 <input
                   type="text"
                   className="form-control"
                   defaultValue={userToUpdate?.first_name}
                   {...register('first_name', {
-                    required: 'error message',
+                    required: 'This field is required',
                   })}
                 />
                 {errors.first_name && (
-                  <p className="position-absolute">
+                  <p className="alert alert-warning position-absolute">
                     {errors.first_name.message}
                   </p>
                 )}
               </div>
               <div className="mb-3">
                 <label htmlFor="" className="form-label">
-                  Apellidos
+                  Last name
                 </label>
                 <input
                   type="text"
                   className="form-control"
                   defaultValue={userToUpdate?.last_name}
-                  {...register('last_name', { required: true })}
+                  {...register('last_name', {
+                    required: 'This field is required',
+                  })}
                 />
+                {errors.last_name && (
+                  <p className="alert alert-warning position-absolute">
+                    {errors.last_name.message}
+                  </p>
+                )}
               </div>
               <div className="mb-3">
                 <label htmlFor="" className="form-label">
-                  Correo
+                  Email
                 </label>
                 <input
                   type="text"
                   className="form-control"
                   defaultValue={userToUpdate?.email}
-                  {...register('email', { required: true })}
+                  {...register('email', { required: 'This field is required' })}
                 />
+                {errors.email && (
+                  <p className="alert alert-warning position-absolute">
+                    {errors.email.message}
+                  </p>
+                )}
               </div>
               <div className="mb-3">
                 <label htmlFor="" className="form-label">
-                  Contraseña
+                  Password
                 </label>
                 <input
                   type="text"
                   className="form-control"
                   defaultValue={userToUpdate?.password}
-                  {...register('password', { required: true })}
+                  {...register('password', {
+                    required: 'This field is required',
+                  })}
                 />
+                {errors.password && (
+                  <p className="alert alert-warning position-absolute">
+                    {errors.password.message}
+                  </p>
+                )}
               </div>
               <div className="mb-3">
                 <label htmlFor="" className="form-label">
-                  Cumpleaños
+                  Birthday
                 </label>
                 <input
                   type="date"
                   className="form-control"
                   defaultValue={userToUpdate?.birthday}
-                  {...register('birthday', { required: true })}
+                  {...register('birthday', {
+                    required: 'This field is required',
+                  })}
                 />
+                {errors.birthday && (
+                  <p className="alert alert-warning position-absolute">
+                    {errors.birthday.message}
+                  </p>
+                )}
               </div>
               <button className="btn btn-create">
                 {userToUpdate ? 'Update user' : 'Create user'}
