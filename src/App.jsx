@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import './App.css';
 import GenericModal from './components/GenericModal';
 import Modal from './components/Modal';
@@ -8,10 +9,13 @@ import SwitchView from './components/SwitchView';
 import UsersList from './components/UsersList';
 import useCrud from './hooks/useCrud';
 
+import { setLoader } from './store/slices/loader.slice';
+
 // Documentation api
 // https://users-crud1.herokuapp.com/swagger/
 
 function App() {
+  const dispatch = useDispatch();
   //Custom hook
   const [users, createUser, updateUser, deleteUser] = useCrud();
   const [usersToShow, setUsersToShow] = useState();
@@ -25,6 +29,7 @@ function App() {
   const [view, setView] = useState('detail');
 
   useEffect(() => {
+    dispatch(setLoader(false));
     if (users) {
       setUsersToShow(users);
     }
