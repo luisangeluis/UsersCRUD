@@ -10,6 +10,7 @@ const SwitchView = ({ setView, view }) => {
 
   return (
     <div className="switch-users col-md-6 rounded d-flex justify-content-center align-items-center mx-auto my-2 my-md-3">
+      <p className="text-light fw-bold my-auto">CHANGE VIEW</p>
       {views.map((v) => (
         <section className="form-check mx-1 mx-md-2">
           <input

@@ -5,15 +5,18 @@
 }
 
 body {
-  background: linear-gradient(rgba(0, 0, 100, 0.35), rgba(0, 0, 100, 0.35)),
+  background: linear-gradient(rgba(0, 0, 100, 0.1), rgba(0, 0, 100, 0.1)),
     url('./assets/eco-office.jpg');
-  background: linear-gradient(#00000099, #00000099),
+  background: linear-gradient(#00000075, #00000075),
     url('./assets/eco-office.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
 }
 
+.color-red {
+  color: #dc3545;
+}
 .btn:hover {
   -webkit-transform: scale(1.05);
   transform: scale(1.05);
@@ -29,22 +32,11 @@ input:focus {
   outline: none;
   border: none;
 }
-form .alert {
-  right: 0;
-}
-
 .App {
   display: flex;
   flex-direction: column;
 }
-
-main {
-  margin-top: 6rem;
-}
-main .container {
-  padding: 1.5rem;
-}
-
+/******************/
 /******header******/
 /******************/
 .header .container {
@@ -63,8 +55,18 @@ main .container {
   background-color: #48589e;
   color: white;
 }
+/******************/
+/*   End header   */
+/******************/
 /* ******Main****** */
 /********************/
+main {
+  margin-top: 6rem;
+}
+main .container {
+  padding: 1.5rem;
+}
+
 .filters {
   border-radius: 5px;
   background-color: #212529;
@@ -87,7 +89,6 @@ main .container {
   display: initial;
   background-color: #ffffff;
   font-weight: bolder;
-  /* color: #fff; */
 }
 
 .form-search .btn {
@@ -97,6 +98,14 @@ main .container {
 
 .form-search .btn:hover {
   color: #212529;
+}
+
+form .alert {
+  right: 0;
+  animation: showAlert 500ms;
+  background-color: #48589e;
+  border-color: #48589e99;
+  opacity: 0.93;
 }
 
 .switch-users input {
@@ -140,7 +149,11 @@ input[type='radio']:checked + label {
 .table button {
   font-size: 0.7rem;
 }
-/******Modals******/
+/******************/
+/*  End Main      */
+/********************/
+/******************/
+/*     Modals     */
 /******************/
 .my-modal {
   margin: auto;
@@ -196,8 +209,10 @@ input[type='radio']:checked + label {
   background-color: #fff;
   margin: 0 auto;
   animation: showModal 700ms;
-  /* opacity: 0; */
 }
+/******************/
+/*   End Modals   */
+/******************/
 
 @keyframes showModal {
   0% {
@@ -209,38 +224,35 @@ input[type='radio']:checked + label {
     top: 10%;
   }
 }
-
-/******End Modals******/
-/******************/
-
-@media screen and (min-width: 576px) {
-  /* body{
-    background-color: red;
-  } */
-  .form-search form {
-    /* width: 75%; */
-    margin: auto;
+@keyframes showAlert {
+  0% {
+    opacity: 0.2;
+    right: -5%;
   }
-
-  .switch-users {
-    /* width: 50%; */
+  100% {
+    opacity: 1;
+    right: 0%;
+  }
+}
+/**********************/
+/*      End Modals    */
+/**********************/
+/**********************/
+/*   Media querys    */
+/**********************/
+@media screen and (min-width: 576px) {
+  .form-search form {
+    margin: auto;
   }
 }
 
 @media screen and (min-width: 768px) {
-  /* body{
-    background-color: red;
-  } */
   .form-search form {
-    /* width: 50%; */
     margin: auto;
   }
 }
 
 @media screen and (min-width: 992px) {
-  /* body{
-    background-color: red;
-  } */
   .form-search form {
     width: 75%;
     margin: auto;
@@ -249,3 +261,6 @@ input[type='radio']:checked + label {
     width: 50%;
   }
 }
+/**********************/
+/*  End Media querys  */
+/**********************/
