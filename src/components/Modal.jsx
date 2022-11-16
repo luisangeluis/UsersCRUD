@@ -20,7 +20,7 @@ const Modal = ({ setShowModal, createUser, userToUpdate, updateUser }) => {
 
   const sendInfo = (data) => {
     console.log(data);
-    
+
     if (userToUpdate) {
       updateUser(userToUpdate.id, data);
     } else {
@@ -36,7 +36,8 @@ const Modal = ({ setShowModal, createUser, userToUpdate, updateUser }) => {
           onClick={() => setShowModal(false)}
           className="btn my-3 btn-create align-self-end"
         >
-          X Cancel
+          <i class="fa-sharp fa-solid fa-xmark p-1"></i>
+          Cancel
         </button>
         <div className="card w-50 mx-auto">
           <div className="card-body">
@@ -55,7 +56,8 @@ const Modal = ({ setShowModal, createUser, userToUpdate, updateUser }) => {
                   {...register('first_name')}
                 />
                 {errors.first_name && (
-                  <p className="alert alert-warning m-0 p-1 d-inline position-absolute">
+                  <p className="alert m-0 p-1 d-inline position-absolute text-light">
+                    <i class="fa-solid fa-circle-exclamation color-red p-1"></i>
                     {errors.first_name?.message}
                   </p>
                 )}
@@ -71,7 +73,8 @@ const Modal = ({ setShowModal, createUser, userToUpdate, updateUser }) => {
                   {...register('last_name')}
                 />
                 {errors.last_name && (
-                  <p className="alert alert-warning m-0 p-1 d-inline position-absolute">
+                  <p className="alert text-light m-0 p-1 d-inline position-absolute">
+                    <i class="fa-solid fa-circle-exclamation color-red p-1"></i>
                     {errors.last_name?.message}
                   </p>
                 )}
@@ -87,23 +90,26 @@ const Modal = ({ setShowModal, createUser, userToUpdate, updateUser }) => {
                   {...register('email')}
                 />
                 {errors.email && (
-                  <p className="alert alert-warning m-0 p-1 d-inline position-absolute">
+                  <p className="alert text-light m-0 p-1 d-inline position-absolute">
+                    <i class="fa-solid fa-circle-exclamation color-red p-1"></i>
                     {errors.email?.message}
                   </p>
                 )}
               </div>
               <div className="mb-3 position-relative">
-                <label htmlFor="" className="form-label">
+                <label htmlFor="password" className="form-label">
                   Password
                 </label>
                 <input
                   type="text"
                   className="form-control"
+                  id="password"
                   defaultValue={userToUpdate?.password}
                   {...register('password')}
                 />
                 {errors.password && (
-                  <p className="alert alert-warning m-0 p-1 d-inline position-absolute">
+                  <p className="alert text-light m-0 p-1 d-inline position-absolute">
+                    <i class="fa-solid fa-circle-exclamation color-red p-1"></i>
                     {errors.password?.message}
                   </p>
                 )}
@@ -119,7 +125,8 @@ const Modal = ({ setShowModal, createUser, userToUpdate, updateUser }) => {
                   {...register('birthday')}
                 />
                 {errors.birthday && (
-                  <p className="alert alert-warning m-0 p-1 d-inline position-absolute">
+                  <p className="alert text-light m-0 p-1 d-inline position-absolute">
+                    <i class="fa-solid fa-circle-exclamation color-red p-1"></i>
                     {errors.birthday?.message}
                   </p>
                 )}

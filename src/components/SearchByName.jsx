@@ -12,15 +12,14 @@ const SearchByName = ({ getUsersByName }) => {
           <label htmlFor="user-name" className="form-label fw-bold">Type a name</label>
         </div> */}
         {/* <div className="col"> */}
-          <input
-            type="text"
-            className="form-control"
-            onChange={onChange}
-            placeholder="Type a name"
-            id="user-name"
-          />
+        <input
+          type="text"
+          className="form-control m-2"
+          onChange={onChange}
+          placeholder="Type a name"
+          id="user-name"
+        />
         {/* </div> */}
-
 
         {/* <button className="btn mx-2">Search</button> */}
       </form>
